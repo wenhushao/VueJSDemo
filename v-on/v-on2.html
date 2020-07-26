@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件处理 v-on示例2:v-on:keydown</title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-on:keydown="fun2('good',$event)" />
+		</div>
+		<script>
+			new Vue({
+				el: '#app', //表示当前vue对象接管了div区域
+				methods: {
+					fun2: function(msg, event) {
+						if (!((event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode = 8 || event.keyCode = 46)) {
+							event.preventDefault();
+						}
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
